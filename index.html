@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Sidebar Navigation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9; /* Light background for the body */
+        }
+        
+        a{
+            text-decoration:none;
+            color:black;
+        }
+        /* Navbar styles */
+        .navbar {
+            background-color: #f0f0f0; /* Light background for navbar */
+            color: #333; /* Dark text color */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 35px 60px; /* Increased padding for better height */
+            position: relative;
+        }
+        .navbar .logo {
+            font-size: 22px; /* Increased font size for logo */
+            font-weight: bold;
+        }
+        /* Sidebar styles */
+        .sidenav {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: -250px; /* Hidden by default */
+            background-color: #ffffff; /* Light background for sidebar */
+            transition: 0.3s;
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for sidebar */
+            overflow-y: auto; /* Allow scrolling if content overflows */
+        }
+        .sidenav .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 20px;
+            color: #333; /* Dark color for close button */
+            cursor: pointer;
+        }
+        .sidenav .user-img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%; /* Circular image */
+            margin: 0 auto 20px; /* Center image and add bottom margin */
+            display: block;
+            background-color: #ccc; /* Placeholder color for image */
+        }
+        .sidenav a {
+            padding: 15px 20px; /* Padding for links */
+            text-decoration: none;
+            font-size: 20px; /* Font size for links */
+            color: #333; /* Dark text color for links */
+            display: block;
+            transition: 0.3s;
+        }
+        .sidenav a:hover {
+            background-color: #e0e0e0; /* Light hover effect */
+        }
+        .sidenav.open {
+            left: 0; /* Show sidebar when open */
+        }
+        .main {
+            transition: margin-left 0.3s; /* Smooth transition for main content */
+            padding: 20px;
+            margin-left: 0; /* Default margin */
+        }
+        .main.shift {
+            margin-left: 250px; /* Shift main content when sidebar is open */
+        }
+        /* New Box Styles */
+        .content-box {
+            background-color: #ffffff; /* White background for content box */
+            border-radius: 8px; /* Rounded corners */
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            position: relative; /* Positioning for absolute children */
+            transition: transform 0.3s; /* Smooth scaling on hover */
+            margin-bottom: 20px; /* Space between boxes */
+        }
+        .content-box:hover {
+            transform: scale(1.02); /* Slightly scale up on hover */
+        }
+        .content-box img {
+            position: absolute;
+            left: 20px; /* Centered on the left */
+            top: 50%;
+            transform: translateY(-50%); /* Center vertically */
+            width: 50px; /* Image width */
+            height: 50px; /* Image height */
+        }
+        .content-box .arrow {
+            position: absolute;
+            bottom: 10px; /* Position at the bottom */
+            right: 20px; /* Align to the right */
+            font-size: 24px; /* Arrow size */
+            color: #333; /* Dark color for arrow */
+        }
+        .content-box .text {
+            text-align: center; /* Center text */
+            margin: 0; /* Remove default margin */
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .sidenav {
+                width: 200px; /* Smaller width for mobile */
+            }
+            .sidenav a {
+                font-size: 18px; /* Smaller font size for links */
+            }
+            .navbar {
+                padding: 10px; /* Smaller padding for mobile */
+            }
+            .navbar .logo {
+                font-size: 18px; /* Smaller font size for logo */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar Section -->
+<div class="navbar">
+    <span class="open-btn" onclick="toggleNav()">&#9776; </span>
+    <div class="logo">Your Logo </div>
+</div>
+
+<!-- Sidebar Section -->
+<div id="mySidenav" class="sidenav">
+    <span class="close-btn" onclick="toggleNav()">&#10005;</span>
+    <img src="user-image.jpg" alt="User Image" class="user-img"> <!-- Replace with your user image URL -->
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+</div>
+
+<!-- Main Content Section -->
+<div id="main" class="main">
+    <h2>Image operation</h2>
+    <p>Key Funtion of  images </p>
+
+    <!-- New Content Box -->
+    
+    <a href="imagetopdf.html">
+    <div class="content-box">
+        <img src="your-image.jpg" alt="Content Image"> <!-- Replace with your image URL -->
+        <h3 class="text">image to pdf </h3>
+        <span class="arrow">&#8594;</span> <!-- Right arrow -->
+    </div></a>
+    
+    
+     <a href="image extension converter.html">
+    <div class="content-box">
+        <img src="your-image.jpg" alt="Content Image"> <!-- Replace with your image URL -->
+        <h3 class="text">image extension <br> converter </h3>
+        <span class="arrow">&#8594;</span> <!-- Right arrow -->
+    </div></a>
+    
+    
+    
+     <a href="pdf to image.html">
+    <div class="content-box">
+        <img src="your-image.jpg" alt="Content Image"> <!-- Replace with your image URL -->
+        <h3 class="text">pdf to image.html</h3>
+        <span class="arrow">&#8594;</span> <!-- Right arrow -->
+    </div></a>
+    
+    
+    
+  <a href="image compress.html">
+    <div class="content-box">
+        <img src="your-image.jpg" alt="Content Image"> <!-- Replace with your image URL -->
+        <h3 class="text">image compress</h3>
+        <span class="arrow">&#8608;</span> <!-- Right arrow -->
+    </div></a>
+    
+</div>
+
+
+
+
+<script>
+    // Function to toggle the sidebar visibility
+    function toggleNav() {
+        var sidenav = document.getElementById("mySidenav");
+        var main = document.getElementById("main");
+        sidenav.classList.toggle("open"); // Toggle sidebar open class
+        
+    }
+</script>
+
+</body>
+</html>
