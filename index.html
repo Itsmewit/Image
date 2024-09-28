@@ -16,12 +16,15 @@
             background-color: #f5f5f5;
         }
         .header {
+        
+            border-radius: 40px ;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 10px 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px 20px;
+            margin: 10px;
+            background-color:#fff;
+            box-shadow: 0 51px 40px rgba(0, 0, 0, 0.1);
         }
         .header .logo {
             display: flex;
@@ -42,18 +45,20 @@
             cursor: pointer;
         }
         .search-bar {
+        border-radius: 70px;
             display: none;
             justify-content: center;
-            padding: 20px;
+            padding: 2px;
             background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 60 90px 30px rgba(0, 0, 0, 0.1);
         }
         .search-bar input {
-            width: 80%;
-            padding: 10px;
+        
+            width: 100%;
+            padding: 15px;
             font-size: 16px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 40px;
         }
         .content {
             text-align: center;
@@ -72,13 +77,16 @@
         .card {
             background-color: #fff;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 51px 80px rgba(0, 0, 0, 0.6);
+      
             margin: 10px 20px;
             padding: 20px;
             text-align: left;
             display: flex;
             align-items: center;
         }
+        
+       
         .card i {
             font-size: 24px;
             margin-right: 20px;
@@ -97,12 +105,12 @@
             height: 100%;
             width: 0;
             position: fixed;
-            z-index: 1;
+           
             top: 0;
             left: 0;
             background-color: #e8eaf6;
             overflow-x: hidden;
-            transition: 0.5s;
+            transition: 0.9s;
             padding-top: 60px;
         }
         .sidenav a {
@@ -114,7 +122,7 @@
             transition: 0.3s;
         }
         .sidenav a:hover {
-            color: #f1f1f1;
+            color: red;
         }
         .sidenav .closebtn {
             position: absolute;
@@ -141,7 +149,7 @@
     <span>
      I ♥ IMG
     </span>
-   </div>
+   </div> 
    <div class="icons">
     <i class="fas fa-search" onclick="toggleSearchBar()">
     </i>
@@ -159,7 +167,7 @@
     ×
    </a>
    <div class="user-image">
-    <img alt="User Image" height="100" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-gKKUcnTYWomdVqv321EVd1qC.png?st=2024-09-28T05%3A28%3A06Z&amp;se=2024-09-28T07%3A28%3A06Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-28T01%3A02%3A55Z&amp;ske=2024-09-29T01%3A02%3A55Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=nTM%2BAKiov3O3kPzCvcrkd79zLs/9kN%2BGUNKno3HH26I%3D" width="100"/>
+    <img alt="User Image" height="100" src="user.jpg" width="100"/>
    </div>
    
    <a href="#">
@@ -208,7 +216,7 @@
    
    
    
-   <a href="Image resize.html"><div class="card">
+   <a href="image resize.html"><div class="card">
     <i class="fas fa-expand-arrows-alt" style="color: #2196F3;">
     </i>
     <div>
@@ -283,19 +291,7 @@
    </div>
    </a>
    
-   <a href="watermakeradd.html"><div class="card">
-    <i class="fas fa-file-image" style="color: #FFEB3B;">
-    </i>
-    <div>
-     <h2>
-   watermark adder
-     </h2>
-     <p>
-      Turn PNG, GIF, TIF, PSD, SVG, WEBP, HEIC, or RAW format images to JPG in bulk with ease.
-     </p>
-    </div>   
-   </div>
-   </a>
+   
    
   </div>
   <script>
