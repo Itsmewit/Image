@@ -1,15 +1,9 @@
- <html>
- <head>
-  <title>
-   Image Editor
-  </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <style>
-      a{
-          text-decoration:none;
-          color:black;
-      }
-   body {
+<html>
+<head>
+    <title>I Love IMG</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -20,64 +14,55 @@
             align-items: center;
             justify-content: space-between;
             padding: 10px 20px;
-            background-color: #fff;
+            background-color: white;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .header .logo {
-            display: flex;
-            align-items: center;
-        }
-        .header .logo span {
             font-size: 24px;
             font-weight: bold;
+        }
+        .header .logo i {
+            color: red;
         }
         .header .icons {
             display: flex;
             align-items: center;
         }
         .header .icons i {
-            font-size: 24px;
+            font-size: 20px;
             margin-left: 20px;
-            color: #333;
             cursor: pointer;
         }
-        .search-bar {
+        .header .search-input {
             display: none;
-            justify-content: center;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-left: 20px;
         }
-        .search-bar input {
-            width: 80%;
-            padding: 10px;
+        .header .search-input input {
+            padding: 5px;
             font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
         }
-        .content {
+        .main-content {
             text-align: center;
             padding: 40px 20px;
         }
-        .content h1 {
+        .main-content h1 {
             font-size: 24px;
-            font-weight: bold;
             margin-bottom: 10px;
         }
-        .content p {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 40px;
+        .main-content p {
+            color: #777;
+            margin-bottom: 30px;
         }
         .card {
-            background-color: #fff;
+            background-color: white;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin: 10px 20px;
             padding: 20px;
-            text-align: left;
+            margin: 10px 0;
             display: flex;
             align-items: center;
+            text-decoration: none;
+            color: inherit;
         }
         .card i {
             font-size: 24px;
@@ -85,12 +70,10 @@
         }
         .card h2 {
             font-size: 18px;
-            font-weight: bold;
             margin: 0;
         }
         .card p {
-            font-size: 14px;
-            color: #666;
+            color: #777;
             margin: 5px 0 0 0;
         }
         .sidenav {
@@ -100,7 +83,7 @@
             z-index: 1;
             top: 0;
             left: 0;
-            background-color: #e8eaf6;
+            background-color: #111;
             overflow-x: hidden;
             transition: 0.5s;
             padding-top: 60px;
@@ -133,176 +116,98 @@
             width: 100px;
             height: 100px;
         }
-  </style>
- </head>
- <body>
-  <div class="header">
-   <div class="logo">
-    <span>
-     I ♥ IMG
-    </span>
-   </div>
-   <div class="icons">
-    <i class="fas fa-search" onclick="toggleSearchBar()">
-    </i>
-    <i class="fas fa-user-circle">
-    </i>
-    <i class="fas fa-bars" onclick="openNav()">
-    </i>
-   </div>
-  </div>
-  <div class="search-bar" id="searchBar">
-   <input placeholder="Search..." type="text"/>
-  </div>
-  <div class="sidenav" id="mySidenav">
-   <a class="closebtn" href="javascript:void(0)" onclick="closeNav()">
-    ×
-   </a>
-   <div class="user-image">
-    <img alt="User Image" height="100" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-gKKUcnTYWomdVqv321EVd1qC.png?st=2024-09-28T05%3A28%3A06Z&amp;se=2024-09-28T07%3A28%3A06Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-28T01%3A02%3A55Z&amp;ske=2024-09-29T01%3A02%3A55Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=nTM%2BAKiov3O3kPzCvcrkd79zLs/9kN%2BGUNKno3HH26I%3D" width="100"/>
-   </div>
-   
-   <a href="#">
-    Home
-   </a>
-   <a href="image compress.html">
-    Compress IMAGE
-   </a>
-   <a href="#">
-    Resize IMAGE
-   </a>
-   <a href="#">
-    Crop IMAGE
-   </a>
-   <a href="#">
-    Convert to JPG
-   </a>
-  </div>
-  
-  
-  <div class="content">
-   <h1>
-    Every tool you could want to edit images in bulk
-   </h1>
-   <p>
-    Your online photo editor is here and forever free!
-   </p>
-   
-   
-   
-   <a href="image compress.html">
-   <div class="card">
-    <i class="fas fa-compress-arrows-alt" style="color: #4CAF50;">
-    </i>
-    <div>
-     <h2>
-      Compress IMAGE
-     </h2>
-     <p>
-      Compress JPG, PNG, SVG, and GIFs while saving space and maintaining quality.
-     </p>
+        .search-bar {
+            display: none;
+            padding: 10px 20px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <i class="fas fa-heart"></i> IMG
+        </div>
+        <div class="icons">
+            <i class="fas fa-search" onclick="toggleSearch()"></i>
+            <div class="search-input">
+                <input type="text" placeholder="Search...">
+            </div>
+            <i class="fas fa-user"></i>
+            <i class="fas fa-bars" onclick="openNav()"></i>
+        </div>
     </div>
-   </div>
-   </a>
-   
-   
-   
-   
-   <a href="image resize.html"><div class="card">
-    <i class="fas fa-expand-arrows-alt" style="color: #2196F3;">
-    </i>
-    <div>
-     <h2>
-      Resize IMAGE
-     </h2>
-     <p>
-      Define your dimensions, by percent or pixel, and resize your JPG, PNG, SVG, and GIF images.
-     </p>
+    <div class="search-bar" id="searchBar">
+        <input type="text" placeholder="Search...">
     </div>
-   </div></a>
-   
-   
-   
- <a href="image crop.html" >
-   <div class="card">
-    <i class="fas fa-crop-alt" style="color: #00BCD4;">
-    </i>
-    <div>
-     <h2>
-      Crop IMAGE
-     </h2>
-     <p>
-      Crop JPG, PNG, or GIFs with ease; Choose pixels to define your rectangle or use our visual editor.
-     </p>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="user-image">
+            <img src="https://placehold.co/100x100" alt="User Image">
+        </div>
+        <a href="#">Home</a>
+        <a href="#">Compress IMAGE</a>
+        <a href="#">Resize IMAGE</a>
+        <a href="#">Crop IMAGE</a>
+        <a href="#">Convert to JPG</a>
     </div>
-   </div>
-   </a>
-   
-   
-   <a href="image extension converter.html"><div class="card">
-    <i class="fas fa-file-image" style="color: #FFEB3B;">
-    </i>
-    <div>
-     <h2>
-      Convert to JPG
-     </h2>
-     <p>
-      Turn PNG, GIF, TIF, PSD, SVG, WEBP, HEIC, or RAW format images to JPG in bulk with ease.
-     </p>
-    </div>   
-   </div>
-   </a>
-   
-     
-   
-   <a href="imagetopdf.html"><div class="card">
-    <i class="fas fa-file-image" style="color: #FFEB3B;">
-    </i>
-    <div>
-     <h2>
-      Convert image to pdf 
-     </h2>
-     <p>
-      Convert each PDF page into a JPG or extract all images contained in a PDF.
-     </p>
-    </div>   
-   </div>
-   </a>
-   
-    <a href="pdf to image.html"><div class="card">
-    <i class="fas fa-file-image" style="color: #FFEB3B;">
-    </i>
-    <div>
-     <h2>
-      PDF TO png
-     </h2>
-     <p>
-      Convert JPG images to PDF in seconds. Easily adjust orientation and margins.
-     </p>
-    </div>   
-   </div>
-   </a>
-   
-   
-   
-  </div>
-  <script>
-   function openNav() {
-            document.getElementById("mySidenav").style.width = "300px";
+    <div class="main-content">
+        <h1>Every tool you could want to edit images in bulk</h1>
+        <p>Your online photo editor is here and forever free!</p>
+        <a href="#" class="card">
+            <i class="fas fa-compress-arrows-alt" style="color: green;"></i>
+            <div>
+                <h2>Compress IMAGE</h2>
+                <p>Compress JPG, PNG, SVG, and GIFs while saving space and maintaining quality.</p>
+            </div>
+        </a>
+        <a href="#" class="card">
+            <i class="fas fa-expand-arrows-alt" style="color: blue;"></i>
+            <div>
+                <h2>Resize IMAGE</h2>
+                <p>Define your dimensions, by percent or pixel, and resize your JPG, PNG, SVG, and GIF images.</p>
+            </div>
+        </a>
+        <a href="#" class="card">
+            <i class="fas fa-crop-alt" style="color: teal;"></i>
+            <div>
+                <h2>Crop IMAGE</h2>
+                <p>Crop JPG, PNG, or GIFs with ease; Choose pixels to define your rectangle or use our visual editor.</p>
+            </div>
+        </a>
+        <a href="#" class="card">
+            <i class="fas fa-file-image" style="color: yellow;"></i>
+            <div>
+                <h2>Convert to JPG</h2>
+                <p>Turn PNG, GIF, TIF, PSD, SVG, WEBP, HEIC, or RAW format images to JPG in bulk with ease.</p>
+            </div>
+        </a>
+    </div>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
         }
 
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
         }
 
-        function toggleSearchBar() {
-            var searchBar = document.getElementById("searchBar");
-            if (searchBar.style.display === "flex") {
-                searchBar.style.display = "none";
+        function toggleSearch() {
+            var searchBar = document.getElementById('searchBar');
+            if (searchBar.style.display === "none" || searchBar.style.display === "") {
+                searchBar.style.display = "block";
             } else {
-                searchBar.style.display = "flex";
+                searchBar.style.display = "none";
             }
         }
-  </script>
- </body>
+    </script>
+</body>
 </html>
